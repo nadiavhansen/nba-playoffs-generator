@@ -5,7 +5,7 @@ import model.Team;
 
 public interface PlayoffsService {
 	
-	List<Team> playGame(List<Team> teams);
-	Team playFinal(Team westTeam, Team eastTeam);
+	Team simulateSeries(Team team1, Team team2);
+	Team simulateConferencePlayoffs(List<Team> teams);
 
 }

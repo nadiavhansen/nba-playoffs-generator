@@ -14,7 +14,7 @@ public class NbaPlayoffsApplication {
 	public static void main(String[] args) {
 		PlayoffsService service = new PlayoffsServiceImpl();
 		PlayoffsController controller = new PlayoffsController(service);
-		controller.inicializePlayoffs();
+		controller.startPlayoffs();
 
 		SpringApplication.run(NbaPlayoffsApplication.class, args);
 	}
