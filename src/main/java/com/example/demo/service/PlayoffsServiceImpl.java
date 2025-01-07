@@ -28,11 +28,28 @@ public class PlayoffsServiceImpl implements PlayoffsService {
 			Game game = new Game (team1, team2, team1Score, team2Score);
 			System.out.println(game);
 			
-			if(game.getWinner().equals(team1)) {
-				winsTeam1++;
-			} else {
-				winsTeam2++;
-			}
+	        if (team1.getName().equals("Denver Nuggets")) {
+	            // Nuggets têm vantagem, ganham 70% das vezes
+	            if (random.nextDouble() < 0.7) {
+	                winsTeam1++;
+	            } else {
+	                winsTeam2++;
+	            }
+	        } else if (team2.getName().equals("Denver Nuggets")) {
+	            // Nuggets têm vantagem, ganham 70% das vezes
+	            if (random.nextDouble() < 0.7) {
+	                winsTeam2++;
+	            } else {
+	                winsTeam1++;
+	            }
+	        } else {
+	            // Simulação normal para outros times
+	            if (team1Score > team2Score) {
+	                winsTeam1++;
+	            } else {
+	                winsTeam2++;
+	            }
+	        }
 		}
 		
 		Team winner = winsTeam1 == 4 ? team1 : team2;
